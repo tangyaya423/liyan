@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拉勾网-最专业的互联网招聘平台_招聘_找工作_人才网_求职</title>
+		<link rel="stylesheet" type="text/css" href="css/lagou.css"/>
+		<script type="text/javascript" src="js/lagou.js"></script>
+		<script src="jq库/jquery-3.2.0.min.js"></script>	
+		
+		<script>
+		$(document).ready(function(){
+ 			 $("#put,#aiqiyi").click(function(){
+    		$("#aiqiyi").hide();
+  			});
+  			 $("#put,#aiqiyi").click(function(){
+    		$("#hot").show();
+  			});
+  			 $(".con-left,.find,.hotSearch").click(function(){
+    		$("#hot").hide();
+  			});
+  		 	});
+  		 	
+  		 	
+  		 	/*function stopPropagation(e){
+  		 		if(e.stopPropagation)
+  		 		e.cancelBubble=true;
+  		 	}
+  		 	$(document).bind('click',function(){
+  		 		$('#hot').css('display','none');
+  		 		};
+  		 	$('#hot').bind('click',function(e){
+  		 		$(document).ready(function(){
+ 			 $("#put").click(function(){
+    		$("#hot").hide();
+  			});
+  		 	});
+  		 	stopPropagation(e);
+  		 	});
+  		 	});*/
+ 
+
+  		 	
+  		 	
+  		 	
+		</script>
+	</head>
+	<body>
+		<div class="whole-page">
+			<div class="menu">
+				<div class="menu-margin">
+					<div class="menu-left">
+						<li>
+							<div class="pic">
+								<img src="img/手机.png"/>
+							</div>
+							<a href="#">
+								拉勾APP
+							</a>
+						</li>
+						<li id="firm"><a href="#"><span>|</span>进入企业版</a></li>
+					</div>
+					<div class="menu-right">
+						<ul>
+							<li><a href="#">消息</a></li>
+							<li><a href="#">我的简历</a></li>
+							<li><a href="#">投递箱</a></li>
+							<li><a href="#">收藏夹</a></li>
+							<li id="spacial"><a href="#">liyan<div class="triangle"></div></a>
+								<ul>
+									<li><a href="#">我的订阅</a></li>
+									<li><a href="#">职业邀请</a></li>
+									<li><a href="#">账号设置</a></li>
+									<li><a href="#">去企业版</a></li>
+									<li><a href="#">退出</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="menu-logo">
+					<div class="logo">
+						<div class="logo-pic"><img src="img/logo_1c5763c.png"/></div>
+						<div class="logo-right">
+							<strong>全国站</strong>
+							<span id="City"  hidefocus="true">[切换城市]</span>
+						</div>
+					</div>
+					<div class="menu-middle">
+						<ul>
+							<li id="fixed"><a href="#">首页</a></li>
+							<li><a href="#">公司</a></li>
+							<li><a href="#">一拍</a></li>
+							<li><a href="#">言职</a></li>
+							<li><a href="#">大鲲</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+					<div class="con-left">
+						
+					</div>
+					<div class="con-right">
+						<div class="con-right-1">
+							<div class="find">
+							<div class="find-top">
+								<h3>实力派找工作从来不发愁</h3>
+							<p>做实力派就该惺惺相惜，拉勾机会+让好职位主动来找你</p>
+							</div>
+							<a href="#">开启拉勾机会+<div class="pic-1"><img src="img/右箭头.png"/></div></a>
+								<a href="#" id="fouse">
+								<img src="img/叉.png"/></a>
+							
+						</div>
+							<div class="search">
+							<input id="put" type="text" value="" placeholder="搜索职位、公司或地点"/>
+							<span id="aiqiyi">
+								爱奇艺改变“视”界
+							</span>
+							<ul id="hot">
+								<span>猜你要搜</span>
+								<li>java</li>
+								<li>ui</li>
+								<li>前端</li>
+								<li>android</li>
+								<li>运营</li>
+								<li>产品经理</li>
+								<li>测试</li>
+								<li>ios</li>
+								<li>php</li>
+								<li>Web前段</li>
+							</ul>
+							<a href="#">搜索</a>
+							</div>
+							<div class="hotSearch">
+							<span>热门搜索：</span>
+							<ul>
+								<li>爱奇艺改变“视”界</li>
+								<li>运维</li>
+								<li>C++</li>
+								<li>测试</li>
+								<li>PHP</li>
+								<li>产品经理</li>
+								<li>编辑</li>
+								<li>html5</li>
+								<li>拉勾App</li>
+							</ul>
+							<div class="home-banner">
+								<div class="banner-pic">
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<!--	<div id="mask"></div>
+		<div id="login">
+			<div class="loginCon">
+				<div id="close"></div>
+			</div>
+		</div>-->
+		
+	</body>
+</html>
