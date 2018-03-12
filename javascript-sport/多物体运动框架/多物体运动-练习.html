@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多物体运动-自写代码</title>
+	</head>
+	<style type="text/css">
+		.aa{
+			height: 200px;
+			width: 200px;
+			margin-left: 20px;
+			float: left;
+			background: #20B2AA;
+			opacity: 0.3; //不设置透明度则盒子的透明度为0
+			filter:alpha(opacity:30); //filter是为了兼容ie,opacity针对于高端及主流浏览器
+			}
+	</style>
+	<body>
+		<div class="aa"></div>
+		<div class="aa"></div>
+		<div class="aa"></div>
+		<div class="aa"></div>
+		
+		
+		<script type="text/javascript">
+			window.onload=function()
+			{
+				var oDiv=document.getElementsByClassName('aa');
+				for(var i=0;i<oDiv.length;i++)
+				{	
+					oDiv[i].alpha=30;
+					oDiv[i].onmouseover=function(){
+						startMove(this,100);
+					}
+					oDiv[i].onmouseout=function(){
+						startMove(this,30);
+					}
+				}
+			}
+			
+			var timer=null;//必须要设置一个定时器
+			function startMove(obj,iTarget)
+			{
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function()
+				{
+					var speed=(iTarget-obj.alpha)/8;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					if(obj.alpha==iTarget)
+					{
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.alpha+=speed;//把速度的变化变成透明度的变化，实现透明度的缓慢变化过程
+						obj.style.filter='alpho(opacity:'+obj.alpho+')';
+						obj.style.opacity=obj.alpha/100;
+					}
+				},30);
+			}
+		</script>
+	</body>
+</html>

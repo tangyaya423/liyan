@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>匀速运动</title>
+	</head>
+	<style type="text/css">
+		.div_1{
+			height: 100px;
+			width: 100px;
+			background: #748AAF;
+			position: absolute;
+			left: 0;
+			top: 50px;
+		}
+		.div_2{
+			height: 400px;
+			width:1px;
+			background: red;
+			position: absolute;
+			left: 600px;
+			top: 10px;
+		}
+		.div_3{
+			height: 400px;
+			width:1px;
+			background: red;
+			position: absolute;
+			left: 800px;
+			top: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		var timer=null;
+		
+		function startMove(iTarget)
+		{
+			
+			var odiv=document.getElementById('div_1');
+ 
+ 			clearInterval(timer);
+ 			
+			timer=setInterval(function()
+			{
+			
+				if(odiv.offsetLeft<iTarget)
+				{
+					speed=7;
+				}
+				else
+				{
+					speed=-7;
+				}
+				
+				
+				if(Math.abs(iTarget-odiv.offsetLeft)<7)
+				{
+					clearInterval(timer);
+					odiv.style.left=iTarget+'px';
+				}
+				else
+				{
+					odiv.style.left=odiv.offsetLeft+speed+'px';
+				}
+				
+			},30)
+		}
+	</script>
+	<body>
+		<input type="button" name="" id="" value="点我到600的位置" onclick="startMove(600)"/>
+		<input type="button" name="" id="" value="点我到800的位置" onclick="startMove(800)" />
+		
+		<div class="div_1" id="div_1"></div>
+		<div class="div_2"></div>
+		<div class="div_3"></div>
+	</body>
+</html>

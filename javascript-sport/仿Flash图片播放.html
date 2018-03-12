@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿flash图片播放</title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.all{
+			height: 450px;
+			width: 450px;
+			border: 1px solid red;
+			margin: auto;
+		}
+		.pic{
+			height: 320px;
+			width: 100%;
+			border: 1px solid red;
+			float:left;
+			overflow: hidden;
+			position: relative;
+		}
+		.bpic{
+			height: 100%;
+			width: 100%;
+			display: inline-block;
+			float: left;
+		}
+		.pic img{
+			height: 100%;
+			width:100%;
+			float: left;
+			margin-left: 0;
+			overflow: hidden;
+		}
+		#spic{
+			height: 130px;
+			width: 100%;
+			float: left;
+			overflow: hidden;
+		}
+		#spic li{
+			height: 100%;
+			width:33.335%;
+			float: left;
+			list-style: none;
+			cursor: pointer;
+		}
+		#spic li img{
+			height: 100%;
+			width: 100%;
+		}
+		.prev,.next{
+			display: block;
+			height: 40px;
+			width: 40px;
+			color: #FFFFFF;
+			font-size: 40px;
+			border: 1px solid red;
+			position: absolute;
+			z-index: 99;
+			float: left;
+			margin-top:120px ;
+			cursor: pointer;
+		}
+		.mark-left,.mark-right{
+			height: 320px;
+			width: 225px;
+			border: 1px solid blue;
+			position: absolute;
+			z-index: 88;
+			background: red;
+			opacity: 0;
+		}
+		.mark-left{
+			float: left;
+			left: 0;
+			top:0;
+		}
+		.mark-right{
+			float: right;
+			right: 0;
+			top: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		function getByClass(oparent,sClass){
+			var oEle=oParent.getElementByTagname('*');
+			var aResult=[];
+			for( var i=0;i<aEle.length;i++)
+			{
+				if(aEle[i].ClassName==sClass)
+				{
+					aResult.push(aEle[i]);
+				}
+				return aRresult;
+			}
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('all');
+			var oPrev=getByClass(oDiv,'prev')[0];
+			var oNext=getByClass(oDiv,'next')[0];
+			var oMake_left=getByClass(oDiv,'make_left')[0];
+			var oMake_right=getByClass(oDiv,'make_right')[0];
+		}
+	</script>
+	<body>
+		<div id="all" class="all">
+			<div class="pic" id="pic">
+				<a class="bpic">
+					<img src="仿flash图片播放/images/1.jpg"/>
+					<img src="仿flash图片播放/images/2.jpg"/>
+					<img src="仿flash图片播放/images/3.jpg" />
+					<img src="仿flash图片播放/images/4.jpg"/>
+					<img src="仿flash图片播放/images/5.jpg"/>
+					<img src="仿flash图片播放/images/6.jpg"/>
+				</a>
+				
+				<a class="prev" style="margin-left: 20px;"><</a>
+				<a class="prev" style="margin-left: 385px;">></a>
+				
+				<a class="mark-left"></a>
+				<a class="mark-right"></a>
+			</div>
+			
+			
+			<ul id="spic">
+				
+					<li><img src="仿flash图片播放/images/1.jpg"/></li>
+					<li><img src="仿flash图片播放/images/2.jpg"/></li>
+					<li><img src="仿flash图片播放/images/3.jpg"/></li>
+					<li><img src="仿flash图片播放/images/4.jpg"/></li>
+					<li><img src="仿flash图片播放/images/5.jpg"/></li>
+					<li><img src="仿flash图片播放/images/6.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+</html>

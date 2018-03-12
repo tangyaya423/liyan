@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js缓冲运动</title>
+	</head>
+	<style type="text/css">
+		.div_1{
+			height: 100px;
+			width: 100px;
+			background: #748AAF;
+			position: absolute;
+			left: 0;
+			top: 50px;
+		}
+		.div_2{
+			height: 400px;
+			width:1px;
+			background: red;
+			position: absolute;
+			left: 600px;
+			top: 10px;
+		}
+		
+	</style>
+	<script>
+		function startMove(iTarget)
+		{
+			var div=document.getElementById('div_1');
+	
+			setInterval( function () {
+				
+				var speed=(iTarget-div.offsetLeft)/10;
+				
+				div.style.left=Math.ceil(div.offsetLeft+speed)+'px';//不加speed的话，不会运动。若不用ceil则不会运动到500的位置
+				
+			document.title=Math.ceil(div.offsetLeft+speed);
+			},30)
+		}
+		
+	</script>
+	<body>
+		<input type="button" name="" id="" value="点我到600的位置" onclick="startMove(600)" />
+		<div class="div_1" id="div_1"></div>
+		<div class="div_2"></div>
+		
+	</body>
+</html>

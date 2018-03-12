@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多物体运动</title>
+	</head>
+	<style type="text/css">
+		.aa{
+			height: 200px;
+			width: 200px;
+			float: left;
+			margin: 10px;
+			background: #FD5D56;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+			var aDiv=document.getElementsByClassName('aa');
+		
+			for(var i=0;i<aDiv.length;i++)
+			{
+				aDiv[i].alpha=30;//要是没有给每个div的alpha和timer单独定义的话,就会出现有些还没到达目标值时另外的又开始了新的
+				
+				aDiv[i].onmouseover=function()
+				{	
+					startMove(this,100);
+				};
+				aDiv[i].onmouseout=function()
+				{	
+					startMove(this,30);
+				};
+				
+			}
+			
+		}
+		
+		var timer=null;
+		
+		function startMove(obj,iTarget){
+			clearInterval(obj.timer);//要是没有给每个div的alpha和timer单独定义的话,就会有一些定时器还没在到达目标的时候又重新开始了
+			
+			obj.timer=setInterval(function()
+				{
+				var speed=(iTarget-obj.alpha)/8;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(obj.alpha==iTarget)
+				{
+					clearInterval(obj.timer);
+				}
+				else
+				{
+					obj.alpha+=speed;
+					obj.style.filter='alpha(opacity:'+obj.alpha+')';
+					obj.style.opacity=obj.alpha/100; //要是没有给每个div的alpha和timer单独定义的话,就会有一些定时器还没在到达目标的时候又重新开始了
+				}
+			},30);
+			
+			
+		}
+	</script>
+	<body>
+		<div class="aa"></div>
+		<div class="aa"></div>
+		<div class="aa"></div>
+		<div class="aa"></div>
+	</body>
+</html>

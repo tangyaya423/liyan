@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算器</title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.all{
+			height: 300px;
+			width: 400px;
+			margin:100px auto;
+			border:1px solid red;
+			background: #94D0EB;
+		}
+		.cancel{
+			display: block;
+		}
+		.entry{
+			height: 60px;
+			width: 100%;
+			float: right;
+			background: #94D0EB;
+		}
+		.key{
+			height: 240px;
+			width: 100%;
+			float: left;
+			margin-top: 10px;
+		}
+		#show{
+			height: 100%;
+			width: 310px;
+			float: left;
+			font-size: 20px;
+			box-shadow: none;
+		}
+		.key ul{
+			height:45px ;
+			width: 100%;
+			border: 1px solid red;
+			float: left;
+			margin-bottom: 10px;
+		}
+		.key ul li,.cancel{
+			float: left;
+			width: 87px;
+			height: 100%;
+			background: #FFFFFF;
+			margin-right: 10px;
+			border-radius: 5px;
+			box-shadow:0 3px 4px #666666 ;
+			transition: all .3s .5s ease-in;
+			cursor: pointer;
+			text-align: center;
+			line-height: 45px;
+			font-size: 19px;
+			font-weight: 600;
+			color: #9B9898;
+		}
+	</style>
+	<body>
+		<div class="all">
+			<div class="entry">
+				<a class="cancel" style="height: 45px;">c</a>
+				<input type="text" name="" id="show" value="" />
+			</div>
+			<div class="key">
+				<ul class="first_floor">
+					<li style="margin-left: 10px;">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>+</li>
+				</ul>
+				<ul class="second_floor">
+					<li style="margin-left: 10px;">4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>-</li>
+				</ul>
+				<ul class="third_floor">
+					<li style="margin-left: 10px;">7</li>
+					<li>8</li>
+					<li>9</li>
+					<li>*</li>
+				</ul>
+				<ul class="fouth_floor">
+					<li style="margin-left: 10px;">0</li>
+					<li>.</li>
+					<li style="background: #F1FF92;">=</li>
+					<li>/</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

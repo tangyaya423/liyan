@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>任意的运动框架</title>
+	</head>
+	<style type="text/css">
+		#div-1{
+			height: 200px;
+			width: 200px;
+			border: 10px solid black;
+			background: yellowgreen;
+			float: left;
+			margin-left: 100px;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+		}
+		/*#div-2{
+			height: 200px;
+			width: 200px;
+			float: left;
+			border: 1px solid black;
+			background: yellowgreen;
+			margin-left: 200px;
+		}*/
+	</style>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+			var timer=null;
+			var oDiv=document.getElementById('div-1');
+//			var oDiv1=document.getElementById('div-2');
+			
+			oDiv.onmouseover=function ()
+			{
+				startMove(this,'opacity',100);
+		    }
+			
+			oDiv.onmouseout=function ()
+			{
+				startMove(this,'opacity',30);
+		    }
+			
+//			oDiv1.onmouseover=function ()
+//			{
+//				startMove(oDiv1,'width',500);
+//		    }
+//			
+//			oDiv1.onmouseout=function ()
+//			{
+//				startMove(oDiv1,'width',200);
+//		    }
+		};
+		
+		function getStyle(obj,attr)
+		{
+			if(obj.currentStyle)
+			{
+				return obj.currentStyle[attr];
+			}
+			else
+			{
+				return getComputedStyle(obj, false) [attr];	
+			}
+			
+		}
+		
+		function startMove(obj,attr,iTarget)
+		{
+			
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function()
+			{ 
+				var oDiv=document.getElementById('div-1');
+				
+				var cur=0;
+				if(attr=='opacity')
+				{
+					cur=Math.round(parseFloat(getStyle(obj,attr))*100);
+				}
+				else
+				{
+					cur=parseInt(getStyle(obj,a ttr));
+				}
+				
+				var speed=(iTarget-cur)/6;
+				
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				
+				if(obj.cur==iTarget)
+				{
+					clearInterval(obj.timer);
+				}
+				else if(attr=='opacity')
+				{
+					obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+					obj.style.opacity=(cur+speed)/100;
+				}
+				else
+				{
+					obj.style[attr]=cur+speed+'px';	
+				}
+			},30);
+		}
+	</script>
+	<body>
+		<div id="div-1"></div>
+		<div id="div-2"></div>	
+		
+	</body>
+</html>
